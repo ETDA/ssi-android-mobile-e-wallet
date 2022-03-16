@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="count"
+            type="String" />
+
+        <variable
+            name="description"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/list_doc_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    tools:background="@color/default_text"/>
+
+
+            <TextView
+                android:text="@{title}"
+                android:layout_marginStart="@dimen/spacing_s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_regular"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/primary"
+                android:letterSpacing="-0.02"
+                android:layout_gravity="bottom"
+                tools:text="เอกสารที่รอฉันลงนาม"
+                />
+
+            <TextView
+                android:text="@{count}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:textStyle="normal"
+                android:textSize="30sp"
+                android:textColor="@color/temporary"
+                android:letterSpacing="-0.02"
+                android:layout_gravity="end|bottom"
+                android:gravity="end"
+                tools:text="40"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:text="@{description}"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosansthai_regular"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/brown_grey"
+            android:letterSpacing="-0.02"
+            tools:text="เอกสารที่ผู้อื่นทำการร้องขอเข้ามาให้เราลงลายมือชื่อดิจิทัล
+เพื่อรับรองความถูกต้องของเอกสาร"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

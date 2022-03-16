@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "165862434313",
+    "project_id": "etda-ssi",
+    "storage_bucket": "etda-ssi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165862434313:android:5dc3732eff9327f6907ad8",
+        "android_client_info": {
+          "package_name": "co.finema.etdassi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165862434313-fh4e03enn837svo2jq2adrrdi6jqc167.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.finema.etdassi",
+            "certificate_hash": "d5d8efd1867edb15770cd6535a390f2990769c20"
+          }
+        },
+        {
+          "client_id": "165862434313-v0u1qlpj12ijlu0n68qbacobhe545843.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5YvXeJNtQZ2L8IqInn_FnHj0Ha69qU9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165862434313-v0u1qlpj12ijlu0n68qbacobhe545843.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165862434313-e9ad0ls89fiqfebp9cqg66b2cd9naeo5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.finema.ETDASSI"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="onCancelListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onDeleteListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardCornerRadius="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_marginTop="18dp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_thai_ui_medium"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:lineSpacingExtra="7sp"
+                android:gravity="center_horizontal"
+                android:text="@string/dialog_button_wanna_delete"
+                tools:text="ต้องการลบเอกสารนี้?"
+                />
+            
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_margin="@dimen/spacing_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:onClick="@{onCancelListener}"
+                    android:layout_marginEnd="@dimen/spacing_l"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/spacing_xxl_4"
+                    app:cardCornerRadius="5dp"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:strokeColor="@color/primary">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        style="@style/ButtonCancleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_button_cancel"
+                        tools:text="ยกเลิก"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:onClick="@{onDeleteListener}"
+                    android:layout_width="100dp"
+                    android:layout_height="@dimen/spacing_xxl_4"
+                    app:cardCornerRadius="5dp"
+                    app:cardBackgroundColor="@color/danger">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        style="@style/ButtonDefaultStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dialog_button_delete"
+                        tools:text="ลบ"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+                
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

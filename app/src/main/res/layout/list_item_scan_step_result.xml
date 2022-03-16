@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vcName"
+            type="String" />
+
+    </data>
+
+    <TextView
+        android:text="@{vcName}"
+        android:layout_marginTop="@dimen/spacing_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosansthai_regular"
+        android:textStyle="normal"
+        android:textSize="16sp"
+        android:textColor="@color/default_text"
+        android:letterSpacing="-0.02"
+        android:gravity="center_horizontal"
+        tools:text="1. บัตรประชาชน"/>
+
+</layout>

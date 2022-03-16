@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="onCardClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="descriptionNo"
+            type="String" />
+
+        <variable
+            name="vcTypeName"
+            type="String" />
+
+        <variable
+            name="isCheck"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:onClick="@{onCardClickListener}"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke1dp"
+            android:background="@color/disable"/>
+
+        <TextView
+            android:text="@{descriptionNo}"
+            android:layout_marginTop="@dimen/spacing_l"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosansthai_semibold"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textColor="@color/primary"
+            android:letterSpacing="-0.02"
+            android:gravity="center_horizontal"
+            tools:text="รายละเอียดเอกสารที่ 1"
+            />
+
+<!--        <TextView-->
+<!--            android:layout_marginStart="@dimen/spacing_l"-->
+<!--            style="@style/ButtonCancleStyle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/step_request_type_of_vc"-->
+<!--            tools:text="@string/step_request_type_of_vc"-->
+<!--            />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginBottom="@dimen/spacing_l"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_marginStart="@dimen/spacing_l"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:visibility="@{isCheck == true ? View.VISIBLE : View.GONE}"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/spacing_s"
+                    android:id="@+id/check_image"
+                    android:layout_width="@dimen/spacing_l"
+                    android:layout_height="@dimen/spacing_l"
+                    android:src="@drawable/ic_check_circle"/>
+
+                <TextView
+                    android:text="@{vcTypeName}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:textStyle="normal"
+                    android:textSize="20sp"
+                    android:textColor="@color/primary"
+                    tools:text="บัตรประชาชน"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ImageView
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:rotation="180"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

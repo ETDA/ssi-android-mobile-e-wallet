@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vcName"
+            type="String" />
+
+        <variable
+            name="status"
+            type="String" />
+
+        <variable
+            name="saveQrListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_color"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/vc_detail_qr_toolbar"
+                layout="@layout/main_toolbar_fading" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/qr_view"
+                tools:visibility="visible"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="29dp"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/title_scan_qr_vp"
+                    android:textColor="@color/secondary"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    tools:text="สแกน QR code เอกสาร" />
+
+                <ImageView
+                    android:id="@+id/qr_image"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/spacing_l"
+                    android:src="@drawable/mock_qr" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginBottom="@dimen/spacing_l"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_l"
+                            android:layout_marginTop="@dimen/spacing_l"
+                            android:fontFamily="@font/notosansthai_semibold"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="-0.02"
+                            android:text="@{vcName}"
+                            android:textColor="@color/primary"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            tools:text="บัตรประชาชน" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_l"
+                            android:fontFamily="@font/notosansthai_semibold"
+                            android:text="@string/title_status_active"
+                            android:textColor="@color/default_text"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            tools:text="สถานะการใช้งาน:" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="78dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="@dimen/spacing_l"
+                        app:cardBackgroundColor="@color/secondary"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:vcStatusCardStatus="@{status}"
+                        app:vcStatusCardView="@{statusTextView}">
+
+                        <TextView
+                            android:id="@+id/statusTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/notosansthai_semibold"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="-0.02"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            tools:text="ใช้งานได้" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:visibility="gone"
+                    android:id="@+id/linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/stroke1dp"
+                    android:layout_marginTop="@dimen/spacing_xxl_2"
+                    android:layout_marginBottom="@dimen/spacing_s"
+                    android:background="@color/disable" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:visibility="gone"
+                    android:id="@+id/save_qr_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{saveQrListener}"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/spacing_l"
+                        android:src="@drawable/ic_file_download" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:layout_marginBottom="@dimen/spacing_l"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="-0.02"
+                        android:text="@string/title_save_qr"
+                        android:textColor="@color/primary"
+                        android:textSize="11sp"
+                        android:textStyle="normal"
+                        tools:text="บันทึก QR" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include
+                android:id="@+id/main_button"
+                layout="@layout/primary_button" />
+
+        </FrameLayout>
+
+
+
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/image_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_loading_png"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

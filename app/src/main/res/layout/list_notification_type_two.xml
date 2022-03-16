@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="OnNotificationClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="vcName"
+            type="String" />
+
+        <variable
+            name="date"
+            type="String" />
+
+        <variable
+            name="signStatus"
+            type="String" />
+
+        <variable
+            name="readStatus"
+            type="Boolean" />
+
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_l"
+        android:layout_marginTop="@dimen/spacing_s"
+        android:layout_marginEnd="@dimen/spacing_l"
+        android:onClick="@{OnNotificationClickListener}"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/spacing_s"
+        app:cardElevation="0dp"
+        app:vcNotiCardReadStatus="@{readStatus}"
+        tools:strokeColor="@color/secondary"
+        tools:strokeWidth="@dimen/stroke2dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:layout_marginEnd="@dimen/spacing_l">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:text="@{vcName}"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="ใบรับรองแพทย์" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    app:cardBackgroundColor="@color/temporary"
+                    app:cardCornerRadius="@dimen/spacing_s"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:vcNotificationCardStatus="@{signStatus}"
+                    app:vcNotificationCardView="@{vcStatusCardText}">
+
+                    <TextView
+                        android:id="@+id/vc_status_card_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/spacing_s"
+                        android:layout_marginEnd="@dimen/spacing_s"
+                        android:fontFamily="@font/notosansthai_semibold"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="-0.02"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        tools:text="รอลงนาม" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:fontFamily="@font/notosansthai_regular"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:vcNotiDescriptionReadStatus="@{readStatus}"
+                app:vcNotiDescriptionSignStatus="@{signStatus}"
+                tools:text="คุณมีเอกสารที่กำลังรอลงนาม กรุณาลงนามเอกสาร" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:fontFamily="@font/notosansthai_regular"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@{date}"
+                android:textColor="@color/brown_grey"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:vcNotiDateTimeReadStatus="@{readStatus}"
+                tools:text="18 พ.ค. 64 เวลา 15:22" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

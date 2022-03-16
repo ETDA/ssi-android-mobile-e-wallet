@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="filterCount"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:layout_marginBottom="@dimen/spacing_l"
+                app:columnCount="10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/search_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    app:layout_columnWeight="9"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/filter"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginEnd="@dimen/spacing_l"
+                    android:layout_marginEnd="@dimen/spacing_l"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edit_text_filed"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawablePadding="4dp"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:textColor="@color/primary"
+                        android:textColorHint="@color/disable"
+                        android:textSize="16sp"
+                        tools:hint="hintText" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginEnd="@dimen/spacing_l"
+                    tools:visibility="visible"
+                    android:visibility="gone"
+                    android:id="@+id/filter"
+                    app:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:id="@+id/filter_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/stroke1dp"
+                        android:src="@drawable/ic_filter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    
+                    <com.google.android.material.card.MaterialCardView
+                        android:visibility="@{filterCount == null ? View.GONE : View.VISIBLE}"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardBackgroundColor="@color/secondary">
+
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@{filterCount}"
+                            android:fontFamily="@font/notosansthai_regular"
+                            android:textColor="@color/white"
+                            android:textSize="9sp"
+                            android:layout_marginStart="0.5dp"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp"
+            tools:listitem="@layout/list_my_vc_item" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

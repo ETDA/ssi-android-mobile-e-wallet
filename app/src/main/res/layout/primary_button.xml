@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="disable"
+            type="Boolean" />
+
+        <variable
+            name="danger"
+            type="Boolean" />
+
+        <variable
+            name="buttonText"
+            type="String" />
+
+        <variable
+            name="onButtonClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:visibility="@{buttonText == null ? View.GONE : View.VISIBLE}"
+        android:onClick="@{onButtonClickListener}"
+        app:primaryButtonDisable="@{disable}"
+        app:primaryButtonDanger="@{danger}"
+        android:id="@+id/primary_button"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="@color/primary">
+
+        <TextView
+            android:id="@+id/primary_button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{buttonText}"
+            tools:text="btnText"
+            style="@style/ButtonDefaultStyle"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onCancelClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onBackupClickListener"
+            type="android.view.View.OnClickListener" />
+
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_l">
+
+            <TextView
+                android:id="@+id/dialog_normal_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/dialog_backup_text_01"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                tools:text="dialog_normal_title" />
+
+            <TextView
+                android:id="@+id/dialog_normal_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/notosansthai_regular"
+                android:letterSpacing="-0.02"
+                android:text="@string/dialog_backup_text_02"
+                android:textColor="@color/default_text"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="dialog_normal_description...........dialog_normal_description dialog_normal_description dialog_normal_description " />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:columnCount="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="12dp"
+                    android:onClick="@{onCancelClickListener}"
+                    app:cardCornerRadius="5dp"
+                    app:layout_columnWeight="1"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <TextView
+                        android:id="@+id/dialog_normal_cancel"
+                        style="@style/ButtonCancleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_backup_text_03"
+                        tools:text="dialog_normal_cancel" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:onClick="@{onBackupClickListener}"
+                    app:cardBackgroundColor="@color/primary"
+                    app:cardCornerRadius="5dp"
+                    app:layout_columnWeight="1">
+
+                    <TextView
+                        android:id="@+id/dialog_normal_accept"
+                        style="@style/ButtonDefaultStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/dialog_backup_text_04"
+                        tools:text="dialog_normal_accept" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="didRequester"
+            type="String" />
+
+        <variable
+            name="creator"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/spacing_l">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginTop="@dimen/spacing_l"
+            android:fontFamily="@font/notosansthai_semibold"
+            android:gravity="center_horizontal"
+            android:letterSpacing="-0.02"
+            android:text="@string/sign_detail_01"
+            android:textColor="@color/primary"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            tools:text="เลขประจำตัวผู้รองขอ(DID) :" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:layout_marginEnd="@dimen/spacing_l"
+            android:fontFamily="@font/notosansthai_regular"
+            android:gravity="start"
+            android:letterSpacing="-0.02"
+            android:text="@{didRequester}"
+            android:textColor="@color/default_text"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            tools:text="did:example:123xxxxxxxxxxxxx76" />
+
+        <FrameLayout
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="ชื่อองค์กรผู้สร้างคำร้อง:"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="ชื่อองค์กรผู้สร้างคำร้อง:" />
+
+            <TextView
+                android:ellipsize="end"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:fontFamily="@font/notosansthai_regular"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@{creator}"
+                android:textColor="@color/default_text"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="19 มี.ค. 64 เวลา 14:00 น." />
+
+        </FrameLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

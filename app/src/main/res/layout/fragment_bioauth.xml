@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="descriptionMain"
+            type="String" />
+
+        <variable
+            name="descriptionSecond"
+            type="String" />
+
+        <variable
+            name="descriptionBottom"
+            type="String" />
+
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/bio_auth_toolbar"
+            android:background="@drawable/home_header_bg_fade"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/userprofile_toolbar"
+                layout="@layout/main_toolbar_fading" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="?attr/actionBarSize"
+            app:layout_constraintBottom_toBottomOf="@id/bio_auth_primary_button_view"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/main_image"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_start_registere_wallet" />
+
+            <TextView
+                android:text="@{descriptionMain}"
+                android:visibility="@{descriptionMain != null ? View.VISIBLE : View.GONE}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                tools:text="เลขประจำตัว DID ของคุณ" />
+
+            <TextView
+                android:id="@+id/description_With_Image"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                tools:text="เลขประจำตัว DID ของคุณ" />
+
+            <TextView
+                android:text="@{descriptionSecond}"
+                android:visibility="@{descriptionSecond == null ? View.GONE : View.VISIBLE}"
+                style="@style/NotoSansThaiUi16Pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                tools:text=" แทนรหัสผ่านความปลอดภัย\n
+ในการเข้าสู่แอปพลิเคชันหรือไม่?" />
+
+            <TextView
+                android:layout_marginTop="@dimen/spacing_s"
+                android:id="@+id/description_Third_textView"
+                android:visibility="gone"
+                style="@style/NotoSansThaiUi16Pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                tools:text=" แทนรหัสผ่านความปลอดภัย\n
+ในการเข้าสู่แอปพลิเคชันหรือไม่?" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:visibility="@{descriptionBottom == null ? View.GONE : View.VISIBLE}"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginEnd="@dimen/spacing_l"
+                app:strokeWidth="@dimen/stroke1dp"
+                app:strokeColor="@color/temporary"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@{descriptionBottom}"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary"
+                    android:letterSpacing="-0.02"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    tools:text="*เพื่อใช้งาน e-Wallet คุณจำเป็นต้องอนุญาต\n
+ให้แอปพลิเคชัน สามารถเข้าถึง Private Key ได้"
+                    />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <RelativeLayout
+            android:id="@+id/bio_auth_primary_button_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/bio_auth_primary_button"
+                layout="@layout/primary_button" />
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="passWrong"
+            type="Boolean" />
+
+        <variable
+            name="passSize"
+            type="Integer" />
+
+        <variable
+            name="alertText"
+            type="String" />
+
+        <variable
+            name="passCodeTitle"
+            type="String" />
+
+        <variable
+            name="OnBiometricClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/set_password_toolbar"
+                layout="@layout/main_toolbar_fading" />
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_flow_pass_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_xxl_2"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:textColor="@color/default_text"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:text="@{passCodeTitle}" />
+
+            <!--            app:passIsWrong="@{passWrong}"-->
+            <!--            app:passSize="@{passSize}"-->
+            <!--            app:passIndexOne="@{passcode1}"-->
+            <!--            app:passIndexTwo="@{passcode2}"-->
+            <!--            app:passIndexThree="@{passcode3}"-->
+            <!--            app:passIndexFour="@{passcode4}"-->
+            <!--            app:passIndexFive="@{passcode5}"-->
+            <!--            app:passIndexSix="@{passcode6}"-->
+
+            <LinearLayout
+                android:id="@+id/ll_pass_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="23dp"
+                android:visibility="visible"
+                app:passIndexFive="@{passcode5}"
+                app:passIndexFour="@{passcode4}"
+                app:passIndexOne="@{passcode1}"
+                app:passIndexSix="@{passcode6}"
+                app:passIndexThree="@{passcode3}"
+                app:passIndexTwo="@{passcode2}"
+                app:passIsWrong="@{passWrong}"
+                app:passSize="@{passSize}">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/passcode_1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="7dp"
+                    app:cardCornerRadius="50dp"
+                    app:strokeColor="@color/brown_grey"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/passcode_2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="7dp"
+                    app:cardBackgroundColor="@color/secondary"
+                    app:cardCornerRadius="50dp"
+                    app:strokeColor="@color/secondary"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/passcode_3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="7dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="50dp"
+                    app:strokeColor="@color/brown_grey"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/passcode_4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="7dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="50dp"
+                    app:strokeColor="@color/brown_grey"
+                    app:strokeWidth="@dimen/stroke1dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/passcode_5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="7dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="50dp"
+                    app:strokeColor="@color/brown_grey"
+                    app:strokeWidth="1dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/passcode_6"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="7dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="50dp"
+                    app:strokeColor="@color/brown_grey"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_pass_code_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/notosansthai_regular"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@{alertText}"
+                android:textColor="@color/danger"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                android:visibility="@{alertText == null ? View.GONE : View.VISIBLE }"
+                tools:text="รหัสผ่านไม่ถูกต้อง" />
+
+            <!--            <RelativeLayout-->
+            <!--                android:layout_marginTop="30dp"-->
+            <!--                android:layout_gravity="center_horizontal"-->
+            <!--                android:layout_width="195dp"-->
+            <!--                android:layout_height="60dp">-->
+
+            <!--                <include-->
+            <!--                    android:id="@+id/finger_scan_btn"-->
+            <!--                    layout="@layout/primary_button"/>-->
+
+            <!--            </RelativeLayout>-->
+
+            <!--            <RelativeLayout-->
+            <!--                android:visibility="gone"-->
+            <!--                android:layout_gravity="center_horizontal"-->
+            <!--                android:layout_width="195dp"-->
+            <!--                android:layout_height="60dp">-->
+
+            <!--                <include-->
+            <!--                    android:id="@+id/face_scan_btn"-->
+            <!--                    layout="@layout/primary_button"/>-->
+
+            <!--            </RelativeLayout>-->
+
+
+            <!--            <ProgressBar-->
+            <!--                android:id="@+id/progress_loading"-->
+            <!--                android:layout_width="@dimen/icon_loading"-->
+            <!--                android:layout_height="@dimen/icon_loading"-->
+            <!--                android:layout_gravity="center_horizontal"-->
+            <!--                android:visibility="gone"/>-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/spacing_xxl_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_1"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_1"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_2"
+                    android:layout_marginStart="@dimen/spacing_xxl_4"
+                    android:layout_marginEnd="@dimen/spacing_xxl_4"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_2"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_3"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_3"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_4"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_4"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_5"
+                    android:layout_marginStart="@dimen/spacing_xxl_4"
+                    android:layout_marginEnd="@dimen/spacing_xxl_4"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_5"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_6"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_6"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_7"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_7"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_8"
+                    android:layout_marginStart="@dimen/spacing_xxl_4"
+                    android:layout_marginEnd="@dimen/spacing_xxl_4"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_8"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_9"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_9"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:onClick="@{OnBiometricClick}"
+                    android:visibility="@{OnBiometricClick == null ? View.INVISIBLE : View.VISIBLE}"
+                    android:id="@+id/btn_biometric"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_fingerprint"
+                        android:layout_gravity="center"/>
+
+                </FrameLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/num_0"
+                    android:layout_marginStart="@dimen/spacing_xxl_4"
+                    android:layout_marginEnd="@dimen/spacing_xxl_4"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="28sp"
+                        android:textColor="@color/primary"
+                        android:gravity="center_horizontal"
+                        android:text="@string/numpad_0"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <FrameLayout
+                    android:id="@+id/btn_del"
+                    android:layout_width="@dimen/pin_size"
+                    android:layout_height="@dimen/pin_size">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_del"/>
+
+                </FrameLayout>
+
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>

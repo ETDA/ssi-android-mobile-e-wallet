@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        
+        <variable
+            name="isCheck"
+            type="Boolean" />
+        
+        <variable
+            name="vcName"
+            type="String" />
+
+        <variable
+            name="onItemClickListener"
+            type="android.view.View.OnClickListener" />
+        
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:onClick="@{onItemClickListener}"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                app:vcItemCheckboxStatus="@{isCheck}"
+                app:vcItemCheckboxText="@{textVcName}"
+                android:id="@+id/image_checkbox"
+                android:layout_width="@dimen/spacing_l"
+                android:layout_height="@dimen/spacing_l"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:src="@drawable/ic_checkbox_disable" />
+
+            <TextView
+                android:text="@{vcName}"
+                android:id="@+id/text_vc_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:fontFamily="@font/notosansthai_regular"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="บัตรประชาชน" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke1dp"
+            android:background="@color/disable" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

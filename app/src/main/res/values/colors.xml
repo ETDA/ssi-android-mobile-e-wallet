@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+<!--    Style guide - ETDA e-wallet color-->
+    <color name="primary">#0a214a</color>
+    <color name="secondary">#40c2d3</color>
+    <color name="temporary">#fbb617</color>
+    <color name="success">#02c39e</color>
+    <color name="danger">#ff4242</color>
+    <color name="default_text">#707070</color>
+    <color name="disable">#D0D0D0</color>
+    <color name="white_grey">#F2F2F2</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="brown_grey">#9d9d9d</color>
+    <color name="bg_color">#f2f2f2</color>
+    <color name="ice_blue">#ebf5f7</color>
+
+<!--    COLOR DATE PICKER-->
+    <color name="color_accent">#009688</color>
+    <color name="text_color_secondary_inverse">#b3ffffff</color>
+    <color name="text_color_primary_inverse">#ffffff</color>
+    <color name="selectable_item_background_borderless">#00000000</color>
+    <color name="text_color_secondary">#8a000000</color>
+    <color name="text_color_primary">#de000000</color>
+    <color name="color_control_activated">#009688</color>
+    <color name="color_control_highlight">#ffffff</color>
+    <color name="window_background">#ccffffff</color>
+    <color name="text_color">#009688</color>
+
+
+    <color name="stroke_color">#c9c9c9</color>
+</resources>

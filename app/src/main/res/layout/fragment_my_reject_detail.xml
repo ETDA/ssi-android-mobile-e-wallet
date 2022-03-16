@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/my_reject_toolbar"
+            layout="@layout/main_toolbar_fading" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_reject_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/spacing_xxl_4" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</layout>

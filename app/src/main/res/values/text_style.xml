@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    TEXT STYLE-->
+    <style name="ButtonCancleStyle">
+        <item name="android:fontFamily">@font/notosansthai_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="ButtonDefaultStyle">
+        <item name="android:fontFamily">@font/notosansthai_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="NotoSansThaiUi16Pt">
+        <item name="android:fontFamily">@font/notosansthai_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">@color/default_text</item>
+    </style>
+</resources>

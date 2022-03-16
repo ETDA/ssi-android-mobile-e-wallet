@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="didAddress"
+            type="String" />
+
+        <variable
+            name="myVc"
+            type="String" />
+
+        <variable
+            name="myRequest"
+            type="String" />
+
+        <variable
+            name="onCreateRequestClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onNotificationClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onSeeMoreCliickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".feature.home.HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginBottom="@dimen/spacing_l"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/home_header_bg"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/home_header_bg_fade"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginBottom="100dp"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:paddingTop="?attr/actionBarSize"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_marginBottom="@dimen/spacing_l"
+                            android:layout_marginTop="@dimen/spacing_l"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="54dp"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/notification_btn"
+                            android:onClick="@{onNotificationClickListener}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_margin="@dimen/spacing_l"
+                                android:id="@+id/notification_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_notifications_active"/>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/notification_badge"
+                                android:layout_width="@dimen/spacing_l"
+                                android:layout_height="@dimen/spacing_l"
+                                app:cardCornerRadius="50dp"
+                                app:cardBackgroundColor="@color/danger"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginBottom="12dp"
+                                app:layout_constraintBottom_toBottomOf="@id/notification_icon"
+                                app:layout_constraintStart_toStartOf="@id/notification_icon">
+
+                                <TextView
+                                    android:id="@+id/notification_count"
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/notosansthai_regular"
+                                    android:textStyle="bold"
+                                    android:textSize="9sp"
+                                    android:textColor="@color/white"
+                                    android:letterSpacing="-0.02"
+                                    android:gravity="center_horizontal"
+                                    tools:text="99+"
+                                    />
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <ImageView
+                            android:id="@+id/etda_logo"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:src="@drawable/logo_e_wallet_text"
+                            android:layout_marginBottom="@dimen/spacing_l"
+                            android:layout_marginTop="@dimen/spacing_xxl"
+                            android:layout_width="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:layout_height="59dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginStart="@dimen/spacing_l"
+                            android:orientation="vertical"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_marginStart="@dimen/spacing_l"
+                        android:layout_marginEnd="@dimen/spacing_l"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="57dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosansthai_semibold"
+                            android:textStyle="normal"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:letterSpacing="-0.02"
+                            android:gravity="center_horizontal"
+                            tools:text="เลขประจำตัว(DID) :"
+                            android:text="@string/title_did_no"
+                            />
+
+                        <TextView
+                            android:text="@{didAddress}"
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosansthai_regular"
+                            android:textStyle="normal"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:letterSpacing="-0.02"
+                            android:gravity="start"
+                            tools:text="did:example:123xxxxxxxxxxxxx76"
+                            />
+
+                        <FrameLayout
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosansthai_semibold"
+                                android:textStyle="normal"
+                                android:textSize="20sp"
+                                android:text="@string/title_my_doc"
+                                android:textColor="@color/white"
+                                android:letterSpacing="-0.02"
+                                android:gravity="center_horizontal"
+                                tools:text="เอกสารของฉัน"
+                                />
+
+                            <TextView
+                                android:text="@{myVc}"
+                                android:layout_gravity="end"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosansthai_semibold"
+                                android:textStyle="normal"
+                                android:textSize="30sp"
+                                android:textColor="@color/temporary"
+                                android:letterSpacing="-0.02"
+                                android:gravity="center_horizontal"
+                                tools:text="8"
+                                />
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="@string/title_my_doc_request"
+                                android:layout_gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosansthai_semibold"
+                                android:textStyle="normal"
+                                android:textSize="20sp"
+                                android:textColor="@color/white"
+                                android:letterSpacing="-0.02"
+                                android:gravity="center_horizontal"
+                                tools:text="เอกสารที่ฉันกำลังร้องขอ"
+                                />
+
+                            <TextView
+                                android:text="@{myRequest}"
+                                android:layout_gravity="end"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosansthai_semibold"
+                                android:textStyle="normal"
+                                android:textSize="30sp"
+                                android:textColor="@color/temporary"
+                                android:letterSpacing="-0.02"
+                                android:gravity="center_horizontal"
+                                tools:text="20"
+                                />
+
+                        </FrameLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:visibility="gone"
+                android:onClick="@{onCreateRequestClickListener}"
+                android:id="@+id/request_doc_btn"
+                app:cardCornerRadius="10dp"
+                android:layout_marginBottom="15dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/temporary"
+                android:layout_marginStart="@dimen/spacing_xxl_4"
+                android:layout_marginEnd="@dimen/spacing_xxl_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="52dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/spacing_l"
+                        android:src="@drawable/ic_note_add"/>
+
+                    <TextView
+                        android:layout_marginStart="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:textStyle="normal"
+                        android:textSize="16sp"
+                        android:textColor="@color/primary"
+                        android:letterSpacing="-0.02"
+                        android:gravity="end"
+                        android:text="@string/btn_request_vp"
+                        tools:text="ร้องขอเอกสาร"
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/title_list_doc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_regular"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/primary"
+                android:letterSpacing="-0.02"
+                android:gravity="center_horizontal"
+                tools:text="รายการเอกสารอื่นๆ"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:onClick="@{onSeeMoreCliickListener}"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:textColor="@color/primary"
+                    android:letterSpacing="-0.02"
+                    android:gravity="end"
+                    tools:text="ดูทั้งหมด"
+                    android:text="@string/title_see_all"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:rotation="90"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/ic_keyboard_arrow"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:background="@color/disable"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_doc_item"
+            android:paddingTop="@dimen/spacing_xs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/list_doc_view"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"/>
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

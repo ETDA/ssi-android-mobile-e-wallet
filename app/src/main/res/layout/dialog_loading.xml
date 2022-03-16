@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/loading_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_loading_png"/>
+
+        <TextView
+            android:layout_marginTop="@dimen/spacing_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosansthai_semibold"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:text="กรุณารอสักครู่..."
+            tools:text="กรุณารอสักครู่..."/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

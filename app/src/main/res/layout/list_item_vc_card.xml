@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vcName"
+            type="String" />
+
+        <variable
+            name="status"
+            type="String" />
+
+        <variable
+            name="vcCardAttributeTitle1"
+            type="String" />
+
+        <variable
+            name="vcCardAttributeDes1"
+            type="String" />
+
+        <variable
+            name="vcCardAttributeTitle2"
+            type="String" />
+
+        <variable
+            name="vcCardAttributeDes2"
+            type="String" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:background="@color/bg_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginBottom="@dimen/spacing_s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginTop="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card_view"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_l"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosansthai_semibold"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="-0.02"
+                            android:text="@{vcName}"
+                            android:textColor="@color/temporary"
+                            android:textSize="24sp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="ใบรับรองแพทย์" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            app:cardBackgroundColor="@color/temporary"
+                            app:cardCornerRadius="@dimen/spacing_s"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:vcNotificationCardStatus="@{status}"
+                            app:vcNotificationCardView="@{vcStatusCardText}">
+
+                            <TextView
+                                android:id="@+id/vc_status_card_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/spacing_s"
+                                android:layout_marginEnd="@dimen/spacing_s"
+                                android:layout_marginBottom="@dimen/stroke1dp"
+                                android:fontFamily="@font/notosansthai_semibold"
+                                android:gravity="center_horizontal"
+                                android:letterSpacing="-0.02"
+                                android:textColor="@color/white"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                tools:text="รอลงนาม" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:text="@{vcCardAttributeTitle1}"
+                        android:textColor="@color/disable"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        tools:text="เลขประจำตัวประชาชน:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_semibold"
+                        android:text="@{vcCardAttributeDes1}"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="normal"
+                        tools:text="0 9876 54321 09 8" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:text="@{vcCardAttributeTitle2}"
+                        android:textColor="@color/disable"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        tools:text="ชื่อและนามสกุล:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_semibold"
+                        android:text="@{vcCardAttributeDes2}"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        tools:text="ฟินีม่า ฟินีม่า" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginBottom="9dp"
+                    android:alpha="0.07"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:text="ETDA"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="ETDA" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</layout>

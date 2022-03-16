@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="90"
+        android:endColor="@color/temporary"
+        android:startColor="#fb9317"
+        android:type="linear" />
+    <!--    <padding android:left= android:top="@dimen/grid_small"-->
+    <!--        android:right="@dimen/grid_small" android:bottom="@dimen/grid_small" />-->
+</shape>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:menu="@menu/bottom_app_bar"
+            app:itemIconSize="24dp"
+            app:itemTextColor="@color/nav_item_foreground"
+            android:theme="@style/Widget.BottomNavigationView"
+            app:labelVisibilityMode="labeled"
+            />
+
+
+<!--        style="@style/Widget.MaterialComponents.BottomNavigationView"-->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:clickable="false"
+            android:backgroundTint="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:theme="@style/FloatingButton"
+            android:src="@drawable/ic_qr_code_toolbar"
+            app:elevation="10dp" />
+
+
+    </FrameLayout>
+
+</layout>

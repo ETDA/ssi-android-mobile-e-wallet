@@ -1,0 +1,205 @@
+<resources>
+<!--    <string name="app_name">ETDA SSI</string>-->
+    <string name="power_by_company">ETDA e-Wallet application by finema.co</string>
+    <string name="term_title">ข้อกำหนดและเงื่อนไขการใช้บริการ</string>
+    <string name="title_contact">ข้อมูลติดต่อ</string>
+    <string name="title_personal_information">ข้อมูลส่วนตัว</string>
+    <string name="etda">ETDA</string>
+    <string name="thai_alphabet">^[ก-๙]*</string>
+
+    <!--    BUTTON-->
+    <string name="active">เปิดใช้งาน</string>
+    <string name="skip">ข้าม</string>
+    <string name="accept">ยอมรับ</string>
+    <string name="register_title">ลงทะเบียน</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="check_data">ตรวจสอบข้อมูล</string>
+    <string name="btn_request_vp">ร้องขอเอกสาร</string>
+    <string name="setting_new_pincode">ตั้งรหัสผ่านใหม่</string>
+    <string name="login_again">เข้าสู่ระบบใหม่</string>
+
+
+    <!--    TITLE TOOLBAR-->
+    <string name="register_success">ลงทะเบียนสำเร็จแล้ว</string>
+    <string name="next">ต่อไป</string>
+    <string name="request_to_access">ขออนุญาตเข้าถึง</string>
+    <string name="confirm">ยืนยัน</string>
+    <string name="register_ewallet_success">เปิดใช้งาน\nETDA e-Wallet สำเร็จ</string>
+    <string name="register_ewallet">เปิดใช้งาน\nETDA e-Wallet</string>
+    <string name="recovery_ewallet">กู้คืนข้อมูล\nETDA e-Wallet</string>
+    <string name="next_step">ดำเนินการต่อ</string>
+    <string name="set_passcode">ตั้งค่าความปลอดภัย</string>
+    <string name="start_crate_passcode">เริ่มต้นสร้างรหัสผ่าน</string>
+    <string name="setting_security">ตั้งค่าความปลอดภัย</string>
+    <string name="start_etda_ewallet">เริ่มต้นใช้งาน ETDA e-Wallet</string>
+    <string name="my_information">ข้อมูลของฉัน</string>
+    <string name="manage_profile">จัดการบัญชี</string>
+    <string name="toolbar_request_authentication">ขอยืนยันตัวตน</string>
+    <string name="toolbar_vc_signed">เอกสารที่ลงนาม</string>
+    <string name="toolbar_create_request_vc">ร้องขอเอกสาร</string>
+    <string name="term_string">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</string>
+
+
+    <!--    TAB LAYOUT-->
+    <string name="tab_layout_vc_request_to_sign">เอกสารที่รอฉันลงนาม</string>
+    <string name="tab_layout_vc_signed">เอกสารรับรองที่ฉันลงนาม</string>
+
+    <!--    DESCRIPTION-->
+    <string name="start_to_use_ewallet">เริ่มต้นใช้งาน\nETDA e-Wallet ของคุณ</string>
+    <string name="please_input_your_information">กรุณากรอกข้อมูลของท่าน เพื่อตรวจสอบข้อมูล</string>
+    <string name="please_input_your_information_correct">*กรุณากรอกข้อมูลให้ถูกต้อง</string>
+    <string name="please_waiting_your_info_inprogress">กรุณารอสักครู่ ระบบกำลังดำเนินการ\nตรวจสอบข้อมูลของคุณ</string>
+    <string name="your_info_verify_success">การตรวจสอบข้อมูลของคุณสำเร็จ</string>
+    <string name="please_verify_with_biometric">กรุณายืนยันตัวตนด้วยการใส่รหัสอุปกรณ์\nสแกนใบหน้า หรือ สแกนลายนิ้วมือ</string>
+    <string name="description_request_to_pk">เพื่อเข้าถึง Private Key [info-image] ภายในอุปกรณ์\nสำหรับการเปิดใช้งาน ETDA e-Wallet</string>
+    <string name="description_request_to_pk_restore">เพื่อเข้าถึง Private Key [info-image] ภายในอุปกรณ์\nสำหรับการกู้คืนข้อมูล ETDA e-Wallet</string>
+    <string name="description_request_to_pk_bottom">*เพื่อใช้งาน e-Wallet คุณจำเป็นต้องอนุญาต\nให้แอปพลิเคชัน สามารถเข้าถึง Private Key ได้</string>
+    <string name="please_waiting_register_e_wallet_inprogress">กรุณารอสักครู่ ระบบกำลังดำเนินการ\nเปิดใช้งาน ETDA e-Wallet</string>
+    <string name="please_waiting_recovery_e_wallet_inprogress">กรุณารอสักครู่ ระบบกำลังดำเนินการ\nกู้คืนข้อมูล ETDA e-Wallet</string>
+    <string name="your_did_number">เลขประจำตัว DID [info-image] ของคุณ</string>
+    <string name="create_pincode_for_access_app">สร้างรหัสผ่าน 6 หลัก\nสำหรับการเข้าใช้งานครั้งถัดไป</string>
+    <string name="enable_biometric_instead_of">เปิดใช้งานการสแกนลายนิ้วมือหรือ\nการสแกนใบหน้า ในการเข้าใช้งานครั้งถัดไป</string>
+    <string name="enable_biometric_instead_of_2"> แทนรหัสผ่านความปลอดภัย\nในการเข้าสู่แอปพลิเคชันหรือไม่?</string>
+    <string name="setting_security_success">การตั้งค่าความปลอดภัยเสร็จสมบูรณ์</string>
+    <string name="protect_your_application_success">การเข้าใช้งานแอปพลิเคชันได้ถูกปกป้อง</string>
+    <string name="setting_new_pin_code_description">คุณต้องการตั้งรหัสผ่านใหม่ 6 หลัก\nสำหรับการเข้าใช้งานหรือไม่?</string>
+    <string name="use_for_setting_new_pin_code">เพื่อใช้สำหรับยืนยันการตั้งรหัสผ่านใหม่</string>
+    <string name="please_enter_pin_code">กรอกรหัสผ่าน</string>
+    <string name="application_protected_by_new_pin_code">การเข้าใช้งานแอปพลิเคชันได้ถูกปกป้อง\nด้วยรหัสผ่านใหม่ของคุณ</string>
+    <string name="description_system_setting_security_01">*หากอุปกรณ์ของคุณยังไม่มีการตั้งค่าความปลอดภัยแอปพลิเคชันจะไม่สามารถเข้าถึงและแสดงข้อมูลสำคัญได้</string>
+    <string name="description_system_setting_security_02">คุณยังไม่ได้ตั้งค่า\nความปลอดภัยของอุปกรณ์"</string>
+
+    <string name="create_request_step_01_title">ส่วนที่ 1/3: เลือกเอกสารที่ต้องการร้องขอ</string>
+    <string name="create_request_step_02_title">ส่วนที่ 2/3 : ระบุข้อมูลเพิ่มเติมในแต่ละเอกสาร</string>
+    <string name="create_request_step_03_title">ส่วนที่ 3/3 : ตรวจสอบคำร้องก่อนการขอเอกสาร</string>
+
+    <!--    TITLE TEXT-->
+    <string name="title_first_name">ชื่อ :</string>
+    <string name="title_last_name">นามสกุล :</string>
+    <string name="title_birth_date">วัน/เดือน/ปี เกิด :</string>
+    <string name="title_card_id">เลขบัตรประชาชน :</string>
+    <string name="title_back_card_number">เลขหลังบัตรประชาชน :</string>
+    <string name="title_contect_address">อีเมล :</string>
+    <string name="title_did_no">เลขประจำตัว(DID) :</string>
+    <string name="title_my_doc">เอกสารของฉัน</string>
+    <string name="title_my_doc_request">เอกสารที่ฉันกำลังร้องขอ</string>
+    <string name="title_list_doc">รายการเอกสารอื่นๆ</string>
+    <string name="title_see_all">ดูทั้งหมด</string>
+    <string name="title_did_no_not_space">เลขประจำตัว(DID):</string>
+    <string name="title_name_and_last_name">ชื่อ-นามสกุล:</string>
+    <string name="title_access_device_information">ข้อมูลการเข้าถึง</string>
+    <string name="title_active_device">อุปกรณ์ที่ใช้งาน :</string>
+    <string name="title_description">รายละเอียด</string>
+    <string name="title_name">ชื่อ</string>
+    <string name="title_vc_description">รายละเอียดเอกสาร</string>
+    <string name="title_system_setting_security">ตั้งค่าความปลอดภัยอุปกรณ์</string>
+    <string name="title_verify_email">ตรวจสอบอีเมล</string>
+
+
+    <!--    HINT TEXT-->
+    <string name="hint_first_name">ตัวอย่าง : ฟินีม่า</string>
+    <string name="hint_last_name">ตัวอย่าง : ฟินีม่า</string>
+    <string name="hint_birth_date">ระบุวัน/เดือน/ปี เกิดของคุณ</string>
+    <string name="hint_card_id">ตัวอย่าง : 1–1111–11111-11-1</string>
+    <string name="hint_back_card_number">ตัวอย่าง : AB0–1234567-89</string>
+    <string name="hint_contect_address">ตัวอย่าง: example@mail.com</string>
+
+    <string name="numpad_1">1</string>
+    <string name="numpad_2">2</string>
+    <string name="numpad_3">3</string>
+    <string name="numpad_4">4</string>
+    <string name="numpad_5">5</string>
+    <string name="numpad_6">6</string>
+    <string name="numpad_7">7</string>
+    <string name="numpad_8">8</string>
+    <string name="numpad_9">9</string>
+    <string name="numpad_0">0</string>
+    <string name="set_password">ตั้งรหัสผ่าน</string>
+    <string name="confirm_password">ยืนยันรหัสผ่านอีกครั้ง</string>
+
+    <string name="position" translatable="false">position</string>
+
+    <!--    DIALOG-->
+    <string name="dialog_title_private_key_info">Private Key หรือกุญแจลับส่วนตัว</string>
+    <string name="dialog_description_private_key">เป็นกุญแจที่ใช้รักษาข้อมูลส่วนตัวของแต่ละบุคคล\nเพื่อไม่ให้บุคคลอื่นสามารถเข้าถึงข้อมูลนั้นได้</string>
+    <string name="dialog_title_did_info">DID (Decentralized identifier)</string>
+    <string name="dialog_description_did_info">เลขประจำตัว(DID) เป็นเลขที่ใช้ในการระบุตัวตน\nของแต่ละบุคคล เพื่อใช้ในการเข้าถึงธุรกรรม\nหรือบริการต่างๆได้ด้วยตนเอง</string>
+
+
+    <!--    TRANSITION-->
+    <string name="transition_main">transition_main</string>
+    <string name="title_document_list">รายการเอกสาร</string>
+    <string name="title_issue">ฉบับ</string>
+    <string name="title_save_qr">บันทึก QR</string>
+    <string name="title_scan_qr_vp">สแกน QR code เอกสาร</string>
+    <string name="title_status_active">สถานะการใช้งาน:</string>
+    <string name="step_request_type_of_vc">ประเภทเอกสาร:</string>
+    <string name="step_request_description">คำขอเพิ่มเติม:</string>
+    <string name="step_request_need_request">เอกสารจำเป็น</string>
+    <string name="step_list_condition">เงื่อนไขในการรับ:</string>
+    <string name="step_request_qr_title_01">คุณสร้างคำร้องขอเอกสารเรียบร้อยแล้ว</string>
+    <string name="step_request_qr_title_02">กรุณาส่ง QR code นี้ให้ผู้รับผิดชอบ</string>
+    <string name="step_request_qr_title_03">สแกน QR code เอกสาร</string>
+    <string name="step_request_qr_title_04">รายการเอกสารที่ส่งคำร้องขอ</string>
+    <string name="step_list_hint">ต.ย. บัตรประชาชน</string>
+    <string name="dialog_button_delete">ลบ</string>
+    <string name="dialog_button_cancel">ยกเลิก</string>
+    <string name="dialog_button_wanna_delete">ต้องการลบเอกสารนี้?</string>
+    <string name="request_for_vc_step_flow_add_vc">เพิ่มเอกสาร</string>
+    <string name="request_for_vc_step_flow_no_vc_list">ไม่มีเอกสารที่ร้องขอ</string>
+    <string name="title_activity_qrreader">QRReaderActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="scan_request_title_1">ข้อมูลผู้ส่งคำร้องขอ:</string>
+    <string name="scan_request_title_2">กรุณาเลือกเอกสารตามที่ร้องขอ</string>
+    <string name="step_list_title_01">ข้อมูลเอกสารที่ร้องขอ:</string>
+    <string name="scan_step_result_title_01">การส่งเอกสารสำแดงเสร็จสมบูรณ์</string>
+    <string name="scan_step_result_title_02">ระบบดำเนินการส่งเอกสารไปยังผู้ส่งคำร้อง</string>
+    <string name="scan_step_result_title_03">รายละเอียดการส่งเอกสารสำแดง</string>
+    <string name="scan_step_result_title_04">ข้อมูลผู้ส่งคำร้องขอ:</string>
+    <string name="scan_step_result_title_05">ข้อมูลเอกสารสำแดงที่ส่งไปยังผู้ร้องขอ:</string>
+    <string name="sign_detail_01">เลขประจำตัวผู้ร้องขอ(DID) :</string>
+    <string name="fragment_sign_btn_01">ปฏิเสธ</string>
+    <string name="fragment_sign_btn_02">ลงนาม</string>
+    <string name="fragment_sign_result_03">รายละเอียดเอกสาร</string>
+    <string name="fragment_sign_result_01">การลงนามเอกสารรับรองเสร็จสมบูรณ์</string>
+    <string name="fragment_sign_result_02">ระบบดำเนินการลงลายมือชื่อดิจิทัล</string>
+    <string name="fragment_sign_result_04">บัตรประชาชน</string>
+    <string name="fragment_sign_result_05">สถานะการใช้งาน:</string>
+    <string name="term_accept_text_01">ขอความยินยอมในการจัดเก็บข้อมูลส่วนบุคคลเพื่อความปลอดภัยของข้อมูล</string>
+    <string name="text_loading_error_01">พบข้อผิดพลาดในการลงทะเบียน</string>
+    <string name="text_loading_error_02">กรุณาตรวจสอบความถูกต้อง\nของข้อมูลอีกครั้ง</string>
+    <string name="btn_text_try_again_01">ลองใหม่อีกครั้ง</string>
+    <string name="dialog_backup_text_01">ไม่ต้องการสำรองข้อมูล ?</string>
+    <string name="dialog_backup_text_02">หากคุณไม่ได้สำรองข้อมูลเอกสารรับรองภายใน ETDA e-Wallet เมื่อข้อมูลสูญหายจะไม่สามารถกู้คืนข้อมูลกลับมาได้</string>
+    <string name="dialog_backup_text_03">ไม่สำรอง</string>
+    <string name="dialog_backup_text_04">สำรองข้อมูล</string>
+
+    <string name="dialog_cancel_pincode_text_01">ยกเลิกการตั้งรหัสผ่านล่าสุด ?</string>
+    <string name="dialog_cancel_pincode_text_02">หากคุณยืนยันที่จะยกเลิก\nคุณจะต้องทำการตั้งรหัสผ่านใหม่อีกครั้ง</string>
+    <string name="dialog_cancel_pincode_text_03">ยกเลิก</string>
+    <string name="dialog_cancel_pincode_text_04">ยกเลิกรหัสผ่าน</string>
+    <string name="setting_backup">การสำรองข้อมูล</string>
+
+    <string name="text_description_cancel_backup">คุณต้องการยกเลิกสำรองข้อมูล\nเอกสารรับรองภายใน ETDA e-Wallet \nไว้กับผู้ให้บริการหรือไม่</string>
+    <string name="text_see_more_underline"><u>ดูรายละเอียด</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="list_item_vc_card_with_tag_text_title_status">สถานะการใช้งาน:</string>
+    <string name="list_item_vc_card_with_tag_text_title_tag">Tag:</string>
+
+<!--    revoke detail-->
+    <string name="text_revoke_with_underline"><u>เพิกถอนเอกสาร</u></string>
+    <string name="text_revoke_card_date_signed_title">วันที่ลงนาม:</string>
+    <string name="fcm_token">FCM Token: %s</string>
+    <string name="fcm_message">FCM_MESSAGE</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
+</resources>

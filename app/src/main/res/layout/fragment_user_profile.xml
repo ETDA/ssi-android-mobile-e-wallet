@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="onInformationClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onSecurityClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onBackupClickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical"
+        tools:context=".feature.userprofile.UserProfileFragment">
+
+        <include
+            android:id="@+id/userprofile_toolbar"
+            layout="@layout/main_toolbar_fading" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:onClick="@{onInformationClick}"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/spacing_l"
+                android:layout_height="@dimen/spacing_l"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:src="@drawable/ic_account_circle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_s"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@string/my_information"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                tools:text="ข้อมูลของฉัน" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:gravity="end|center_vertical">
+
+                <ImageView
+                    android:rotation="90"
+                    android:layout_width="@dimen/spacing_l"
+                    android:layout_height="@dimen/spacing_m"
+                    android:src="@drawable/ic_keyboard_arrow" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:transitionName="@string/transition_main"
+            android:id="@+id/tab_security"
+            android:onClick="@{onSecurityClick}"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/spacing_l"
+                android:layout_height="@dimen/spacing_l"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:src="@drawable/ic_security" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_s"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@string/setting_security"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                tools:text="ตั้งค่าความปลอดภัย" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:gravity="end|center_vertical">
+
+                <ImageView
+                    android:rotation="90"
+                    android:layout_width="@dimen/spacing_l"
+                    android:layout_height="@dimen/spacing_m"
+                    android:src="@drawable/ic_keyboard_arrow" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:visibility="gone"
+            android:transitionName="@string/transition_main"
+            android:id="@+id/tab_backup"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/spacing_l"
+                android:layout_height="@dimen/spacing_l"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:src="@drawable/folder_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_s"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@string/setting_backup"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                tools:text="การสำรองข้อมูล" />
+
+            <RelativeLayout
+                android:onClick="@{onBackupClickListener}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:gravity="end|center_vertical">
+
+                <ImageView
+                    android:id="@+id/backup_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="31dp"
+                    tools:src="@drawable/ic_switch_on" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

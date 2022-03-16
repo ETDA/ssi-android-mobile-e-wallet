@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isRequest"
+            type="Boolean" />
+
+        <variable
+            name="vcName"
+            type="String" />
+
+        <variable
+            name="vcIndexTitle"
+            type="String" />
+
+        <variable
+            name="onItemClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onCloseClickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_color">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginBottom="@dimen/spacing_s"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            app:cardCornerRadius="@dimen/spacing_s">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="@{vcIndexTitle}"
+                        android:paddingStart="@dimen/spacing_l"
+                        android:paddingTop="@dimen/spacing_l"
+                        android:background="@color/ice_blue"
+                        android:paddingBottom="@dimen/spacing_l"
+                        android:paddingEnd="@dimen/spacing_l"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_semibold"
+                        android:textStyle="normal"
+                        android:textSize="16sp"
+                        android:textColor="@color/primary"
+                        android:letterSpacing="-0.02"
+                        android:gravity="start"
+                        tools:text="รายละเอียดเอกสารที่ 1"
+                        />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginTop="@dimen/spacing_l"
+                            android:layout_marginStart="@dimen/spacing_l"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            style="@style/ButtonCancleStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/step_request_type_of_vc"
+                            tools:text="ประเภทเอกสาร:"
+                            />
+
+                        <TextView
+                            android:text="@{vcName}"
+                            android:layout_marginEnd="@dimen/spacing_s"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosansthai_regular"
+                            android:textStyle="normal"
+                            android:textSize="24sp"
+                            android:textColor="@color/default_text"
+                            tools:text="บัตรประชาชน"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:layout_marginStart="@dimen/spacing_l"
+                        style="@style/ButtonCancleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="คำขอเพิ่มเติม:"
+                        android:text="@string/step_request_description"
+                        />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_marginTop="6dp"
+                        app:strokeWidth="@dimen/stroke1dp"
+                        app:strokeColor="@color/default_text"
+                        android:layout_marginStart="@dimen/spacing_l"
+                        android:layout_marginEnd="@dimen/spacing_l"
+                        app:cardCornerRadius="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edit_text_description"
+                            android:fontFamily="@font/notosansthai_regular"
+                            android:padding="@dimen/spacing_s"
+                            android:textSize="16sp"
+                            android:gravity="start"
+                            android:hint="โปรดระบุ:"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:background="@null"/>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:paddingTop="@dimen/spacing_s"
+                        android:paddingBottom="@dimen/spacing_l"
+                        android:onClick="@{onItemClickListener}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            app:vcItemCheckboxStatus="@{isRequest}"
+                            app:vcItemCheckboxText="@{textVcName}"
+                            android:id="@+id/image_checkbox"
+                            android:layout_width="@dimen/spacing_l"
+                            android:layout_height="@dimen/spacing_l"
+                            android:layout_marginStart="@dimen/spacing_l"
+                            android:src="@drawable/ic_checkbox_anable" />
+
+                        <TextView
+                            android:id="@+id/text_vc_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:fontFamily="@font/notosansthai_regular"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="-0.02"
+                            android:textColor="@color/primary"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            android:text="@string/step_request_need_request"
+                            tools:text="เอกสารจำเป็น" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <RelativeLayout
+                    android:onClick="@{onCloseClickListener}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:layout_margin="@dimen/spacing_l"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_close"/>
+
+                </RelativeLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+
+</layout>

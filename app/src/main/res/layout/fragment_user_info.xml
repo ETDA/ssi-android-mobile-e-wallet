@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="onCopyClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="userInfoViewModel"
+            type="co.finema.etdassi.feature.userprofile.information.UserInfoViewModel" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical"
+        tools:context=".feature.userprofile.information.UserInfoFragment">
+
+        <include
+            android:id="@+id/toolbar_user_info"
+            layout="@layout/main_toolbar_fading" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_l">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/spacing_l"
+                    android:layout_height="@dimen/spacing_l"
+                    android:src="@drawable/ic_account_circle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_s"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:textColor="@color/primary"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:text="@string/title_personal_information"
+                    tools:text="ข้อมูลส่วนตัว" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:text="@string/title_did_no_not_space"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="เลขประจำตัว(DID):" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@{userInfoViewModel.didAddress}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_l"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:gravity="start"
+                    android:letterSpacing="-0.02"
+                    android:textColor="@color/default_text"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="did:example:123xxxxxxxxxxxxx76" />
+
+                <ImageView
+                    android:onClick="@{onCopyClick}"
+                    android:layout_marginTop="@dimen/spacing_s"
+                    android:layout_marginStart="@dimen/spacing_s"
+                    android:layout_marginBottom="@dimen/spacing_s"
+                    android:layout_width="@dimen/spacing_l"
+                    android:layout_height="@dimen/spacing_l"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_content_copy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/disable"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:background="@color/white"
+            android:padding="@dimen/spacing_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/title_name_and_last_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/primary"
+                android:letterSpacing="-0.02"
+                android:gravity="center_horizontal"
+                tools:text="ชื่อ-นามสกุล:"
+                />
+
+            <TextView
+                android:text="@{userInfoViewModel.fullName}"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_marginStart="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_regular"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/default_text"
+                android:letterSpacing="-0.02"
+                android:gravity="center_horizontal"
+                tools:text="Finema amenif"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:padding="@dimen/spacing_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/spacing_l"
+                    android:layout_height="@dimen/spacing_l"
+                    android:src="@drawable/ic_access_device" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_s"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:textColor="@color/primary"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:text="@string/title_access_device_information"
+                    tools:text="ข้อมูลการเข้าถึง" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:layout_marginTop="@dimen/spacing_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/primary"
+                android:text="@string/title_active_device"
+                android:letterSpacing="-0.02"
+                android:gravity="center_horizontal"
+                tools:text="อุปกรณ์ที่ใช้งาน :"
+                />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@{userInfoViewModel.deviceName}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:textColor="@color/default_text"
+                    android:letterSpacing="-0.02"
+                    android:gravity="center_horizontal"
+                    tools:text="iPhone11"
+                    />
+
+                <ImageView
+                    tools:visibility="visible"
+                    android:visibility="invisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_fiber_manual_record"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/spacing_s"
+                    android:layout_marginEnd="6dp"/>
+
+                <TextView
+                    android:text="@{userInfoViewModel.location}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:textColor="@color/default_text"
+                    android:letterSpacing="-0.02"
+                    android:gravity="center_horizontal"
+                    tools:text="กรุงเทพมหานคร, ประเทศไทย"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:text="@{userInfoViewModel.timeLog}"
+                android:layout_marginTop="@dimen/spacing_xxs"
+                tools:visibility="visible"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_regular"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/default_text"
+                android:letterSpacing="-0.02"
+                android:gravity="center_horizontal"
+                tools:text="21 เม.ษ. 64 เวลา 15:22 น."
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

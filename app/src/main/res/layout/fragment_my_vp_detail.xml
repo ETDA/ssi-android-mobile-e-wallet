@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vpGroupName"
+            type="String" />
+
+        <variable
+            name="requesterDidAddress"
+            type="String" />
+
+        <variable
+            name="requestDate"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/vp_detail_toolbar"
+            layout="@layout/main_toolbar_fading" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="ชื่อกลุ่มเอกสาร:"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="ชื่อกลุ่มเอกสาร:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:fontFamily="@font/notosansthai_regular"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@{vpGroupName}"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                tools:text="เอกสารสมัครประกันสุขภาพ" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="ข้อมูลผู้ส่งคำร้องขอ:"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="ข้อมูลผู้ส่งคำร้องขอ:" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:fontFamily="@font/notosansthai_regular"
+                android:gravity="start"
+                android:letterSpacing="-0.02"
+                android:text="@{requesterDidAddress}"
+                android:textColor="@color/default_text"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="did:example:123xxxxxxxxxxxxx76" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:fontFamily="@font/notosansthai_regular"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@{requestDate}"
+                android:textColor="@color/default_text"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="19 มี.ค. 64 เวลา 14:00 น." />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:background="@color/success"
+            android:fontFamily="@font/notosansthai_semibold"
+            android:gravity="center_vertical"
+            android:letterSpacing="-0.02"
+            android:paddingStart="@dimen/spacing_l"
+            android:paddingTop="18dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="18dp"
+            android:text="รายการเอกสารสำแดงที่ส่ง"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            tools:text="รายการเอกสารสำแดงที่ส่ง" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/list_item_my_vp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

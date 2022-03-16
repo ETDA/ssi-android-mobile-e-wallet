@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_menu"
+        android:title="หน้าหลัก" />
+    <item
+        android:id="@+id/navigation_my_vc"
+        android:icon="@drawable/ic_doc_menu"
+        android:title="เอกสารของฉัน" />
+    <item
+        android:id="@+id/navigate_scan"
+        android:checkable="false"
+        android:title="สแกน" />
+    <item
+        android:id="@+id/navigation_my_sign"
+        android:icon="@drawable/ic_doc_sign_menu"
+        android:title="เอกสารลงนาม" />
+    <item
+        android:id="@+id/navigation_userprofile"
+        android:icon="@drawable/ic_profile_menu"
+        android:title="บัญชี" />
+
+</menu>

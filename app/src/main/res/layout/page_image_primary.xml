@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="headerText"
+            type="String" />
+
+        <variable
+            name="descriptionMain"
+            type="String" />
+
+        <variable
+            name="descriptionSecond"
+            type="String" />
+
+        <variable
+            name="textWithBorder"
+            type="String" />
+
+        <variable
+            name="descriptionBottom"
+            type="String" />
+
+        <variable
+            name="descriptionTop"
+            type="String" />
+
+        <variable
+            name="thirdDescription"
+            type="String" />
+
+        <variable
+            name="onResentClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onInfoDialogClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onDidDialogClickListener"
+            type="android.view.View.OnClickListener" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/page_image_primary_toolbar_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="?attr/actionBarSize"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/home_header_bg_fade">
+
+            <include
+                android:id="@+id/page_image_primary_toolbar"
+                layout="@layout/main_toolbar" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/page_image_primary_button_view"
+            app:layout_constraintTop_toBottomOf="@id/page_image_primary_toolbar_view">
+
+            <ImageView
+                android:id="@+id/main_image"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_start_registere_wallet" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:text="@{descriptionMain}"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:visibility="@{descriptionMain != null ? View.VISIBLE : View.GONE}"
+                tools:text="เลขประจำตัว DID ของคุณ" />
+
+            <TextView
+                android:id="@+id/description_With_Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:onClick="@{onDidDialogClickListener}"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:visibility="gone"
+                tools:text="เลขประจำตัว DID ของคุณ" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="288dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="@{textWithBorder == null ? View.GONE : View.VISIBLE}"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:layout_marginEnd="@dimen/spacing_s"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:letterSpacing="-0.02"
+                    android:text="@{textWithBorder}"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="did:example:123xxxxxxxxxxxxx76" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                style="@style/NotoSansThaiUi16Pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:gravity="center_horizontal"
+                android:text="@{descriptionSecond}"
+                android:visibility="@{descriptionSecond == null ? View.GONE : View.VISIBLE}"
+                tools:text=" แทนรหัสผ่านความปลอดภัย\n
+ในการเข้าสู่แอปพลิเคชันหรือไม่?" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:text="@{thirdDescription}"
+                android:textColor="@color/secondary"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:visibility="@{thirdDescription == null ? View.GONE : View.VISIBLE}"
+                tools:text="user@mail.com" />
+
+            <TextView
+                android:id="@+id/description_Third_textView"
+                style="@style/NotoSansThaiUi16Pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:gravity="center_horizontal"
+                android:onClick="@{onInfoDialogClickListener}"
+                android:visibility="gone"
+                tools:text=" แทนรหัสผ่านความปลอดภัย\n
+ในการเข้าสู่แอปพลิเคชันหรือไม่?" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_xxl_3"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:visibility="@{descriptionTop == null ? View.GONE : View.VISIBLE}"
+                app:strokeColor="@color/temporary"
+                app:strokeWidth="@dimen/stroke1dp">
+
+                <TextView
+                    android:layout_margin="@dimen/spacing_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:gravity="center"
+                    android:letterSpacing="-0.02"
+                    android:text="@{descriptionTop}"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="*เพื่อใช้งาน e-Wallet คุณจำเป็นต้องอนุญาต\n
+ให้แอปพลิเคชัน สามารถเข้าถึง Private Key ได้" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/page_image_primary_button_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:visibility="@{descriptionBottom == null ? View.GONE : View.VISIBLE}"
+                app:strokeColor="@color/temporary"
+                app:strokeWidth="@dimen/stroke1dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:gravity="center"
+                    android:letterSpacing="-0.02"
+                    android:text="@{descriptionBottom}"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="*เพื่อใช้งาน e-Wallet คุณจำเป็นต้องอนุญาต\n
+ให้แอปพลิเคชัน สามารถเข้าถึง Private Key ได้" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <include
+                android:id="@+id/page_image_primary_button"
+                layout="@layout/primary_button" />
+
+            <include
+                android:id="@+id/page_image_secondary_button"
+                layout="@layout/secondary" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/resend_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_xl"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="7dp"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:gravity="center_horizontal"
+                    android:text="ไม่ได้รับอีเมล ?"
+                    android:textColor="@color/default_text"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="ไม่ได้รับอีเมล ?" />
+
+                <TextView
+                    android:id="@+id/countdown_resent_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{onResentClickListener}"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="ส่งอีกครั้ง" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosansthai_semibold"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="1sp"
+            android:paddingTop="?attr/actionBarSize"
+            android:text="@{headerText}"
+            android:textColor="@color/primary"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="เปิดใช้งาน\n
+ETDA e-Wallet สำเร็จ (headerText)" />
+
+        <TextView
+            android:id="@+id/sub_title"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosansthai_semibold"
+            android:gravity="center_horizontal"
+            android:letterSpacing="-0.02"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_title"
+            tools:text="ระบบได้ส่งรหัสยืนยันการเริ่มต้นใหม่
+ที่อีเมลของคุณ" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

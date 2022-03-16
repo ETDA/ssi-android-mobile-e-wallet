@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dialogTitle"
+            type="String" />
+        
+        <variable
+            name="dialogDescription"
+            type="String" />
+
+        <variable
+            name="cancelText"
+            type="String" />
+
+        <variable
+            name="submitText"
+            type="String" />
+        
+        <variable
+            name="onCancelClickListener"
+            type="android.view.View.OnClickListener" />
+        
+        <variable
+            name="onSubmitClickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_margin="@dimen/spacing_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@{dialogTitle}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:textColor="@color/primary"
+                android:lineSpacingExtra="5sp"
+                android:gravity="center_horizontal"
+                tools:text="dialogTitle"
+                />
+
+            <TextView
+                android:layout_marginTop="@dimen/spacing_xxs"
+                android:text="@{dialogDescription}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_regular"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/default_text"
+                android:letterSpacing="-0.02"
+                tools:text="dialogDescription dialogDescription dialogDescription dialogDescription"
+                />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xxl_4"
+                app:columnCount="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="12dp"
+                    android:onClick="@{onCancelClickListener}"
+                    app:cardCornerRadius="5dp"
+                    app:layout_columnWeight="1"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <TextView
+                        style="@style/ButtonCancleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@{cancelText}"
+                        tools:text="cancelText" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="12dp"
+                    android:onClick="@{onSubmitClickListener}"
+                    app:cardBackgroundColor="@color/danger"
+                    app:cardCornerRadius="5dp"
+                    app:layout_columnWeight="1">
+
+                    <TextView
+                        style="@style/ButtonDefaultStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@{submitText}"
+                        tools:text="submitText" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="onCancelClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="onSignClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="status"
+            type="String" />
+        
+        <variable
+            name="vcName"
+            type="String" />
+
+        <variable
+            name="vcCardAttributeTitle1"
+            type="String" />
+
+        <variable
+            name="vcId"
+            type="String" />
+
+        <variable
+            name="vcCardAttributeTitle2"
+            type="String" />
+
+        <variable
+            name="vcOwnerName"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/main_toolbar_fading" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:paddingBottom="110dp"
+                android:clipToPadding="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerview"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="20dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/spacing_s"
+                app:columnCount="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/spacing_s"
+                    android:onClick="@{onCancelClickListener}"
+                    app:layout_columnWeight="1"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <TextView
+                        style="@style/ButtonCancleStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/fragment_sign_btn_01"
+                        tools:text="ปฏิเสธ" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="@dimen/spacing_s"
+                    android:onClick="@{onSignClickListener}"
+                    app:cardBackgroundColor="@color/primary"
+                    app:layout_columnWeight="1">
+
+                    <TextView
+                        style="@style/ButtonDefaultStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/fragment_sign_btn_02"
+                        tools:text="ลงนาม" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

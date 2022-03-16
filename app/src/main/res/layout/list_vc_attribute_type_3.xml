@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="@dimen/spacing_l"
+        android:layout_marginEnd="@dimen/spacing_l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="#E1E7F4"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosansthai_regular"
+            android:padding="@dimen/spacing_l"
+            android:text="@{title}"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Diagnostics" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:paddingTop="5dp"
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="@dimen/stroke2dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/white"
+            tools:itemCount="1"
+            tools:listitem="@layout/list_vc_attribute_type_2" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

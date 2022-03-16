@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="date"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/notosansthai_semibold"
+            android:gravity="start"
+            android:letterSpacing="-0.02"
+            android:text="@{date}"
+            android:textColor="@color/primary"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            tools:text="18 พ.ค. 64" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/list_notification_type_two" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

@@ -1,0 +1,146 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ETDASSIAndroid" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:colorPrimaryDark">@color/primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/secondary</item>
+        <item name="android:windowLightStatusBar">false</item> <!-- set flag icon bar -->
+        <!-- Customize your theme here. -->
+        <item name="background">@color/white</item>
+
+<!--        <item name="android:datePickerStyle">@style/SSIDatePickerStyle</item>-->
+        <item name="android:datePickerDialogTheme">@style/SSIDatePickerStyle</item>
+
+
+
+    </style>
+
+    <style name="SSIDatePickerStyle" parent="@style/ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:textColorSecondaryInverse">@color/text_color_secondary_inverse</item>
+        <item name="android:textColorPrimaryInverse">@color/text_color_primary_inverse</item>
+        <item name="selectableItemBackgroundBorderless">@color/selectable_item_background_borderless</item>
+        <item name="android:textColorSecondary">@color/text_color_secondary</item>
+        <item name="android:textColorPrimary">@color/text_color_primary</item>
+        <item name="android:colorControlActivated">@color/color_control_activated</item>
+        <item name="android:colorControlHighlight">@color/color_control_highlight</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="colorPrimary">@color/text_color</item>
+        <item name="colorPrimaryDark">@color/text_color</item>
+        <item name="showTitle">false</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#f00</item>
+    </style>
+
+
+    <style name="Theme.ETDASSIAndroidLight" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="background">@color/white</item>
+    </style>
+
+    <style name="Theme.ETDASSIAndroid.Register" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="background">@color/white</item>
+    </style>
+
+    <style name="FloatingButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="colorSecondary">@color/temporary</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="fontFamily">@font/notosansthai_regular</item>
+        <item name="android:fontFamily">@font/notosansthai_regular</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="Theme.ETDASSIAndroid.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ETDASSIAndroid.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.ETDASSIAndroid.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
+<!--    Tab layout Themes-->
+
+    <style name="TabLayoutTextAppearance" parent="TextAppearance.Design.Tab">\
+        <item name="android:fontFamily">@font/noto_sans_thai_ui_medium</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="TextAppearance.MaterialComponents.Overline.Custom" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/notosansthai_semibold</item>
+    </style>
+
+    <style name="ThemeOverlay.Catalog.MaterialCalendar.Custom" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="headerLayout">@color/danger</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ThemeMaterialCalendarButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/ThemeMaterialCalendarButton</item>
+        <item name="rangeFillColor">@color/ice_blue</item>
+        <!-- Customize text field of the text input mode. -->
+<!--        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>-->
+
+        <item name="fontFamily">@font/notosansthai_semibold</item>
+    </style>
+
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ThemeMaterialCalendarButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="android:fontFamily">@font/notosansthai_regular</item>
+    </style>
+
+    <style name="AppTheme.TextRegular" parent="Theme.ETDASSIAndroid.TextAppearance">
+        <item name="android:fontFamily">@font/notosansthai_regular</item>
+    </style>
+
+    <style name="Theme.ETDASSIAndroid.TextAppearance">
+        <item name="android:fontFamily">@font/notosansthai_regular</item>
+    </style>
+
+
+</resources>

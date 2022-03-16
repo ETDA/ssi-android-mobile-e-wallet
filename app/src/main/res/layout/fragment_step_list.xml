@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="stepTitle"
+            type="String" />
+
+        <variable
+            name="isListEmpty"
+            type="Boolean" />
+
+        <variable
+            name="onAddListClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="requestVcTypeName"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/step_list_toolbar"
+                layout="@layout/main_toolbar_fading" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:orientation="vertical"
+                android:visibility="@{requestVcTypeName != null ? View.VISIBLE : View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_l"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:gravity="start"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/step_list_title_01"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="ข้อมูลเอกสารที่ร้องขอ:" />
+
+                <TextView
+                    android:layout_marginTop="@dimen/spacing_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_l"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:gravity="end"
+                    android:layout_marginStart="@dimen/spacing_l"
+                    android:layout_gravity="end"
+                    android:letterSpacing="-0.02"
+                    android:text="@{requestVcTypeName}"
+                    android:textColor="@color/primary"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="ใบรับรองแพทย์" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_l"
+                    android:layout_marginEnd="53dp"
+                    app:cardCornerRadius="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edit_text_filed"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawablePadding="4dp"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:hint="@string/step_list_hint"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:textColor="@color/primary"
+                        android:textColorHint="@color/disable"
+                        android:textSize="16sp"
+                        tools:hint="hintText" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_l"
+                    android:src="@drawable/ic_filter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="100dp"
+                android:visibility="@{isListEmpty == false ? View.VISIBLE : View.GONE}"
+                tools:listitem="@layout/list_vc_item_with_checkbox" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/empty_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="100dp"
+                android:background="@color/bg_color"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{isListEmpty == false ? View.GONE : View.VISIBLE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="-0.02"
+                    android:text="@string/request_for_vc_step_flow_no_vc_list"
+                    android:textColor="@color/default_text"
+                    android:textSize="24sp"
+                    android:textStyle="normal"
+                    tools:text="ไม่มีเอกสารที่ร้องขอ" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/spacing_xxl_4"
+                    android:onClick="@{onAddListClickListener}"
+                    app:cardBackgroundColor="@color/primary"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        style="@style/ButtonDefaultStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:text="@string/request_for_vc_step_flow_add_vc"
+                        tools:text="เพิ่มเอกสาร" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:outlineAmbientShadowColor="@color/black"
+            android:outlineSpotShadowColor="@color/black"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include
+                android:id="@+id/step_list_button"
+                layout="@layout/primary_button" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

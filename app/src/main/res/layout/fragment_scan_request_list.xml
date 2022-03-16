@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="stepTitle"
+            type="String" />
+
+        <variable
+            name="didRequester"
+            type="String" />
+
+        <variable
+            name="createDate"
+            type="String" />
+
+        <variable
+            name="requestName"
+            type="String" />
+
+        <variable
+            name="verifier"
+            type="String" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/main_toolbar_fading" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_color">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_l">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosansthai_semibold"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="-0.02"
+                        android:text="@string/scan_request_title_1"
+                        android:textColor="@color/primary"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        tools:text="ข้อมูลผู้ส่งคำร้องขอ:" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:gravity="start"
+                        android:letterSpacing="-0.02"
+                        android:text="@{didRequester}"
+                        android:textColor="@color/default_text"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        tools:text="did:example:123xxxxxxxxxxxxx76" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="-0.02"
+                        android:text="@{createDate}"
+                        android:textColor="@color/default_text"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        tools:text="19 มี.ค. 64 เวลา 14:00 น." />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosansthai_semibold"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="-0.02"
+                            android:text="ชื่อองค์กรผู้ส่งคำร้อง:"
+                            android:textColor="@color/primary"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            tools:text="ชื่อองค์กรผู้ส่งคำร้อง:" />
+
+                        <TextView
+                            android:ellipsize="end"
+                            android:layout_gravity="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:fontFamily="@font/notosansthai_regular"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="-0.02"
+                            android:text="@{verifier}"
+                            android:textColor="@color/default_text"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            tools:text="19 มี.ค. 64 เวลา 14:00 น." />
+
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosansthai_semibold"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="-0.02"
+                            android:text="ชื่อคำร้อง:"
+                            android:textColor="@color/primary"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            tools:text="ชื่อคำร้อง:" />
+
+                        <TextView
+                            android:ellipsize="end"
+                            android:layout_gravity="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_s"
+                            android:fontFamily="@font/notosansthai_regular"
+                            android:gravity="center_horizontal"
+                            android:letterSpacing="-0.02"
+                            android:text="@{requestName}"
+                            android:textColor="@color/default_text"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            tools:text="19 มี.ค. 64 เวลา 14:00 น." />
+                    </FrameLayout>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_s"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/ice_blue"
+                        android:fontFamily="@font/notosansthai_semibold"
+                        android:gravity="center_vertical"
+                        android:letterSpacing="-0.02"
+                        android:padding="@dimen/spacing_l"
+                        android:text="@string/scan_request_title_2"
+                        android:textColor="@color/primary"
+                        android:textSize="20sp"
+                        android:textStyle="normal"
+                        tools:text="กรุณาเลือกเอกสารตามที่ร้องขอ" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:paddingBottom="110dp"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/list_item_vc_request_type_one" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="3dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <include
+                    android:id="@+id/btm_btn"
+                    layout="@layout/primary_button" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

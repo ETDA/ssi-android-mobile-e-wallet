@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="value"
+            type="String" />
+
+    </data>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="@dimen/spacing_l"
+        android:paddingEnd="@dimen/spacing_l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:columnCount="5">
+
+        <TextView
+            android:text="@{title}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="2"
+            android:fontFamily="@font/notosansthai_semibold"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            tools:text="ชื่อเอกสาร:"/>
+
+        <TextView
+            android:layout_marginStart="@dimen/spacing_l"
+            android:text="@{value}"
+            android:layout_width="0dp"
+            app:layout_columnWeight="3"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosansthai_regular"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/default_text"
+            tools:text="ใบรับรองแพทย์ ใบรับรองแพทย์ ใบรับรองแพทย์ ใบรับรองแพทย์ ใบรับรองแพทย์ ใบรับรองแพทย์"/>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+</layout>

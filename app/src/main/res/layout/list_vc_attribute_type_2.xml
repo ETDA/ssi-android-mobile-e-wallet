@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/upper_line"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke1dp"
+            android:background="@color/disable"/>
+
+        <View
+            android:id="@+id/upper_line_no_margin"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke1dp"
+            android:background="@color/disable"/>
+
+        <TextView
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginTop="14dp"
+            android:text="@{title}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosansthai_regular"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/primary"
+            tools:text="Doctor"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/list_vc_attribute_type_1"
+            tools:itemCount="4"/>
+
+        <View
+            android:id="@+id/under_line"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginEnd="@dimen/spacing_l"
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/spacing_s"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/stroke1dp"
+            android:background="@color/disable"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

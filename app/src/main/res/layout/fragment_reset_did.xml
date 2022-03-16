@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="headerText"
+            type="String" />
+
+        <variable
+            name="onResentClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="email"
+            type="String" />
+
+        <variable
+            name="refCode"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".feature.register.reset_did.ResetDidFragment">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/header_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="1sp"
+                android:paddingTop="?attr/actionBarSize"
+                android:text="@{headerText}"
+                android:textColor="@color/primary"
+                android:textSize="24sp"
+                android:textStyle="normal"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="เปิดใช้งาน\n
+ETDA e-Wallet สำเร็จ (headerText)" />
+
+            <TextView
+                android:id="@+id/sub_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginTop="109dp"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_title"
+                tools:text="ระบบได้ส่งรหัสยืนยันการเริ่มต้นใหม่
+ที่อีเมลของคุณ" />
+
+            <TextView
+                style="@style/NotoSansThaiUi16Pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:text="กรอกรหัสยืนยันที่ส่งไปยัง"
+                tools:text="กรอกรหัสยืนยันที่ส่งไปยัง" />
+
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/notosansthai_semibold"
+                android:gravity="center_horizontal"
+                android:text="@{email}"
+                android:textColor="@color/secondary"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="user@mail.com" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reset_code_border_1"
+                    android:layout_width="60dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:strokeColor="@color/disable"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/reset_code_text_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/secondary"
+                        android:textSize="32sp"
+                        tools:text="1" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reset_code_border_2"
+                    android:layout_width="60dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:strokeColor="@color/disable"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/reset_code_text_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/secondary"
+                        android:textSize="32sp"
+                        tools:text="1" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reset_code_border_3"
+                    android:layout_width="60dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:strokeColor="@color/disable"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/reset_code_text_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/secondary"
+                        android:textSize="32sp"
+                        tools:text="1" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reset_code_border_4"
+                    android:layout_width="60dp"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:strokeColor="@color/disable"
+                    app:strokeWidth="@dimen/stroke1dp">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/reset_code_text_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:fontFamily="@font/notosansthai_regular"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/secondary"
+                        android:textSize="32sp"
+                        tools:text="1" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    style="@style/NotoSansThaiUi16Pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@{refCode}"
+                    tools:text="Ref : F1NM" />
+
+                <TextView
+                    android:id="@+id/countdown_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="(10:00)" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/resend_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xxl_4"
+                android:layout_marginBottom="@dimen/spacing_xl"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="7dp"
+                    android:fontFamily="@font/notosansthai_regular"
+                    android:gravity="center_horizontal"
+                    android:text="ไม่ได้รับอีเมล ?"
+                    android:textColor="@color/default_text"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="ไม่ได้รับอีเมล ?" />
+
+                <TextView
+                    android:id="@+id/countdown_resent_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosansthai_semibold"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{onResentClickListener}"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    tools:text="ส่งอีกครั้ง" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
