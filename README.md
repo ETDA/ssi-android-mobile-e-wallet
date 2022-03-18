@@ -18,7 +18,7 @@
 
 This repository contains the source code of the Self-Sovereign Identity Mobile e-Wallet App for Android.
 
-The SSI e-Wallet Apps are responsible for scanning and verifying VC using public keys from blockchain.
+The SSI e-Wallet Apps are responsible for scanning and verifying VC using public keys from blockchain. This app can be sign the VC using the key from Trusted Execution Environment(TEE) which contains in Android devices by scanning QR code on the website.
 
 ## Development
 
